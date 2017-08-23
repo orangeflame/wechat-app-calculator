@@ -1,0 +1,26 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="addPersonBtn">
+    <div class="person-form">
+      <input type="text" 
+          name="personName" 
+          class="person-name"
+          value="{{personName}}"
+          bindinput="personNameChange" 
+          placeholder="姓名" />
+      <button bindtap="addPerson" type="primary" disabled="{{isPersonNameInputDisable}}">
+        添加好友
+      </button>
+    </div>
+  </view>
+  <view>
+    <ul class="person-list">
+      <li class="person-list-item" 
+          wx:for="{{persons}}" 
+          wx:for-index="idx" 
+          wx:for-item="personName">
+          {{personName}}
+      </li>
+    </ul>
+  </view>
+</view>

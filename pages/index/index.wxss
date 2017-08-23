@@ -1,0 +1,24 @@
+.person-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.person-list-item {
+  display: inline-flex;
+  border: 1px solid #ddd;
+  border-bottom-width: 0;
+  min-width: 300px;
+  padding: 5px;
+}
+
+.person-list-item:first-child {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.person-list-item:last-child {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-width: 1px;
+}
