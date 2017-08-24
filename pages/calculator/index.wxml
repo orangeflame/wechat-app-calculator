@@ -1,3 +1,13 @@
 <view class="container">
-  Hello, calculator
+  <ul class="person-list">
+    <li class="person-list-item" 
+        wx:for="{{persons}}" 
+        wx:key="{{index}}"
+        wx:for-index="idx" 
+        wx:for-item="personName">
+      <span>{{personName}}</span>  
+      <input class="num" type="number" maxlength="3"/>
+      <switch checked bindchange="switchChange"/>
+    </li>
+  </ul>
 </view>

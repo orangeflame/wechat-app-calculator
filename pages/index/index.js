@@ -36,6 +36,10 @@ Page({
   },
   goToCalculator: function() {
     console.log('goToCalculator');
+    wx.setStorage({
+      key: "persons",
+      data: this.data.persons,
+    });
     wx.navigateTo({
       url: '../calculator/index'
     }); 
