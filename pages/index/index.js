@@ -16,6 +16,14 @@ Page({
       isPersonNameInputDisable: true,
     });
   },
+  removePerson: function (event) {
+    const index = event.currentTarget.dataset.personIndex;
+    const persons = [...this.data.persons];
+    persons.splice(index, 1);
+    this.setData({
+      persons,
+    })
+  },
   personNameChange: function (event) {
     const personName = event.detail.value;
     this.setData({
@@ -25,6 +33,9 @@ Page({
   },
   isPersonNameEmpty: function () {
     return this.data.person.length !== 0;
+  },
+  goToCalculator: function() {
+    console.log('goToCalculator');
   },
   onLoad: function () {
     console.log('onLoad')

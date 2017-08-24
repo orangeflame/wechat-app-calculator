@@ -17,10 +17,24 @@
     <ul class="person-list">
       <li class="person-list-item" 
           wx:for="{{persons}}" 
+          wx:key="{{index}}"
           wx:for-index="idx" 
           wx:for-item="personName">
-          {{personName}}
+        <span>{{personName}}</span>  
+        <button class="remove-person-btn"
+            data-person-index="{{idx}}"
+            bindtap="removePerson" 
+            type="warning">
+          删除 
+        </button>
       </li>
     </ul>
+  </view>
+  <view class="action-btn-group">
+    <button bindtap="goToCalculator" 
+        type="primary" 
+        disabled="{{persons.length === 0}}">
+      开始算钱
+    </button>
   </view>
 </view>

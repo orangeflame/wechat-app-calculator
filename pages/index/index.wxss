@@ -5,9 +5,11 @@
 }
 
 .person-list-item {
-  display: inline-flex;
+  align-items: center;
+  display: flex;
   border: 1px solid #ddd;
   border-bottom-width: 0;
+  justify-content: space-between;
   min-width: 300px;
   padding: 5px;
 }
@@ -21,4 +23,12 @@
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   border-bottom-width: 1px;
+}
+
+.action-btn-group {
+  margin-top: 20px;
+}
+
+button.remove-person-btn {
+  margin-right: 0;
 }
