@@ -36,6 +36,9 @@ Page({
   },
   goToCalculator: function() {
     console.log('goToCalculator');
+    wx.navigateTo({
+      url: '../calculator/index'
+    }); 
   },
   onLoad: function () {
     console.log('onLoad')
