@@ -5,9 +5,18 @@
         wx:key="{{index}}"
         wx:for-index="idx" 
         wx:for-item="personName">
-      <span>{{personName}}</span>  
-      <input class="num" type="number" maxlength="3"/>
-      <switch checked bindchange="switchChange"/>
+      <span class="name">{{personName}}</span>
+      <switch data-person-name="{{personName}}" 
+          checked 
+          bindchange="sliderChange" />  
+      <input class="num" 
+          type="number" 
+          bindchange="inputChange"
+          maxlength="3" />
+    </li>
+    <li class="person-list-item">
+      <span class="name">小结</span>
+      <span>{{balance}}</span>  
     </li>
   </ul>
 </view>
