@@ -9,7 +9,8 @@
       <switch data-person-name="{{personName}}" 
           checked 
           bindchange="sliderChange" />  
-      <input class="num" 
+      <input data-person-name="{{personName}}"
+          class="num" 
           type="number" 
           bindchange="inputChange"
           maxlength="3" />
