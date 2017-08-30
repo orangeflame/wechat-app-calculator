@@ -22,7 +22,7 @@ Page({
     persons.splice(index, 1);
     this.setData({
       persons,
-    })
+    });
   },
   personNameChange: function (event) {
     const personName = event.detail.value;

@@ -34,6 +34,15 @@ Page({
       balance,
     });
   },
+  deleteSheets: function(event) {
+    const idx = event.currentTarget.dataset.sheetIdx;
+    const length = this.data.sheets.length;
+    const sheets = [...this.data.sheets.slice(0, idx), ...this.data.sheets.slice(idx + 1, length)];
+    this.setData({
+      sheets,
+      currentPage: 0,
+    });
+  },
   getBalance: function (sheet) {
     let balance = 0;
     sheet.forEach((detail) => {
@@ -71,6 +80,7 @@ Page({
           sheet,
           sheets,
           balance: 0,
+          currentPage: 0,
         });
       }
     });

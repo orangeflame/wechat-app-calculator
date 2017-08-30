@@ -27,7 +27,7 @@
         <button class="remove-person-btn"
             data-person-index="{{idx}}"
             bindtap="removePerson" 
-            type="warning">
+            type="">
           删除 
         </button>
       </li>
@@ -43,7 +43,7 @@
   </view>
   <button bindtap="reset" 
       class="action-btn-group"
-      type="warning">
+      type="default">
       重置
   </button>
 </view>

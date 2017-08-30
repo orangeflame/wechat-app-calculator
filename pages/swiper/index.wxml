@@ -8,5 +8,10 @@
          <span>{{(sheet.number * (sheet.positive ? 1 : -1))}}</span> 
       </li>
     </ul>
+    <button type="warn"
+        data-sheet-idx="{{idx}}" 
+        bindtap="deleteSheets">
+      删除
+    </button>
   </view>
 </template>

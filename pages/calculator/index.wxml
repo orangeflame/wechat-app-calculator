@@ -32,10 +32,11 @@
   </div>  
   <swiper class="swiper" 
       indicator-dots 
-      style="height: {{sheet.length * 100}}rpx;">
-    <block wx:for="{{sheets}}">
+      current="{{currentPage}}"
+      style="height: {{sheet.length * 100 + 200}}rpx;">
+    <block wx:for="{{sheets}}" wx:for-index="idx" >
       <swiper-item>
-        <template is="swiper" data="{{item}}"/>
+        <template is="swiper" data="{{item, idx}}"/>
       </swiper-item>
     </block>
   </swiper>
