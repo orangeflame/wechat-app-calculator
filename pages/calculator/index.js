@@ -41,6 +41,16 @@ Page({
     });
     return balance;
   },
+  overview: function() {
+    wx.setStorage({
+      key: "sheets",
+      data: this.data.sheets,
+    });
+    wx.navigateTo({
+      url: '../overview/index'
+    }); 
+
+  },
   onLoad: function () {
     var that = this;
     wx.getStorage({

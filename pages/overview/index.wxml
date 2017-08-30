@@ -1,0 +1,10 @@
+<view class="container">
+   <ul class="person-list">
+      <li class="person-list-item" 
+          wx:for="{{overviews}}" 
+          wx:for-item="overview">
+         <span>{{overview.personName}}</span>   
+         <span>{{overview.balance}}</span> 
+      </li>
+    </ul>
+</view>
