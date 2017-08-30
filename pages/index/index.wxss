@@ -1,5 +1,6 @@
 .action-btn-group {
   margin-top: 20px;
+  width: 250px;
 }
 
 button.remove-person-btn {

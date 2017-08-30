@@ -8,7 +8,10 @@
           value="{{personName}}"
           bindinput="personNameChange" 
           placeholder="姓名" />
-      <button bindtap="addPerson" type="primary" disabled="{{isPersonNameInputDisable}}">
+      <button class="action-btn-group" 
+          bindtap="addPerson" 
+          type="primary" 
+          disabled="{{isPersonNameInputDisable}}">
         添加好友
       </button>
     </div>
@@ -30,11 +33,17 @@
       </li>
     </ul>
   </view>
-  <view class="action-btn-group">
+  <view>
     <button bindtap="goToCalculator" 
         type="primary" 
+        class="action-btn-group"
         disabled="{{persons.length === 0}}">
       开始算钱
     </button>
   </view>
+  <button bindtap="reset" 
+      class="action-btn-group"
+      type="warning">
+      重置
+  </button>
 </view>
