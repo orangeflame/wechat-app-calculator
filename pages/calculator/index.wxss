@@ -12,3 +12,12 @@
 .swiper {
   width: 320px;
 }
+
+.btn-group button {
+  margin: 10px;
+  width: 300px;
+}
+
+.container {
+  padding: 0;
+}

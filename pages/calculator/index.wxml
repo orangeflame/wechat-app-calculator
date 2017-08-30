@@ -1,12 +1,5 @@
 <import src="../swiper/index.wxml"/>
 <view class="container">
-  <swiper class="swiper" indicator-dots>
-    <block wx:for="{{sheets}}">
-      <swiper-item>
-        <template is="swiper" data="{{item}}"/>
-      </swiper-item>
-    </block>
-  </swiper>
   <ul class="person-list">
     <li class="person-list-item" 
         wx:for="{{persons}}" 
@@ -27,14 +20,21 @@
       <span>{{balance}}</span>  
     </li>
   </ul>
-</view>
-<view>
-  <button bindtap="saveSheets" 
-      type="primary" >
-    保存
-  </button>
-  <button bindtap="overview" 
-      type="default" >
-    总结
-  </button>
+  <div class="btn-group">
+    <button bindtap="saveSheets" 
+        type="primary" >
+      保存
+    </button>
+    <button bindtap="overview" 
+        type="default" >
+      总结
+    </button>
+  </div>  
+  <swiper class="swiper" indicator-dots>
+    <block wx:for="{{sheets}}">
+      <swiper-item>
+        <template is="swiper" data="{{item}}"/>
+      </swiper-item>
+    </block>
+  </swiper>
 </view>

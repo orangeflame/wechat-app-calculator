@@ -5,7 +5,7 @@
           wx:for="{{item}}" 
           wx:for-item="sheet">
          <span>{{sheet.personName}}</span>   
-         <span>{{sheet.number}}</span> 
+         <span>{{(sheet.number * (sheet.positive ? 1 : -1))}}</span> 
       </li>
     </ul>
   </view>
