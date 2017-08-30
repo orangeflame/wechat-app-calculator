@@ -30,7 +30,9 @@
       总结
     </button>
   </div>  
-  <swiper class="swiper" indicator-dots>
+  <swiper class="swiper" 
+      indicator-dots 
+      style="height: {{sheet.length * 100}}rpx;">
     <block wx:for="{{sheets}}">
       <swiper-item>
         <template is="swiper" data="{{item}}"/>

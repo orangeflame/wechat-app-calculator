@@ -6,3 +6,7 @@
 button.remove-person-btn {
   margin-right: 0;
 }
+
+.container {
+  padding: 20rpx;
+}
