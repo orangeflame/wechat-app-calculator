@@ -1,0 +1,12 @@
+<template name="swiper">
+  <view>
+    <ul class="person-list">
+      <li class="person-list-item" 
+          wx:for="{{item}}" 
+          wx:for-item="sheet">
+         <span>{{sheet.personName}}</span>   
+         <span>{{sheet.number}}</span> 
+      </li>
+    </ul>
+  </view>
+</template>

@@ -4,13 +4,17 @@ Page({
   data: {
    
   },
+  saveSheets: function() {
+    const sheets = [...this.data.sheets, this.data.sheet];
+    this.setData({ sheets })
+  },
   inputChange: function(event) {
     const number = event.detail.value;
     const personName = event.currentTarget.dataset.personName;
     let sheet = this.data.sheet;
-    let personSheet = sheet.get(personName);
-    personSheet.number = number;
-    sheet.set(personName, personSheet);
+    const personSheetIndex = sheet.findIndex((detail) => detail.personName == personName);
+    let personSheet = sheet[personSheetIndex];
+    sheet[personSheetIndex] = Object.assign(sheet[personSheetIndex], {number});
     const balance = this.getBalance(sheet);
     this.setData({
       sheet,
@@ -21,9 +25,9 @@ Page({
     const positive = event.detail.value;
     const personName = event.currentTarget.dataset.personName;
     let sheet = this.data.sheet; 
-    let personSheet = sheet.get(personName);
-    personSheet.positive = positive;
-    sheet.set(personName, personSheet);
+    const personSheetIndex = sheet.findIndex((detail) => detail.personName == personName);
+    let personSheet = sheet[personSheetIndex];
+    sheet[personSheetIndex] = Object.assign(sheet[personSheetIndex], {positive});
     const balance = this.getBalance(sheet);
     this.setData({
       sheet,
@@ -32,7 +36,7 @@ Page({
   },
   getBalance: function (sheet) {
     let balance = 0;
-    [...sheet.values()].forEach((detail) => {
+    sheet.forEach((detail) => {
       balance += detail.number * (detail.positive ? 1 : -1);
     });
     return balance;
@@ -44,11 +48,12 @@ Page({
       success: function (res) {
         const persons = res.data;
         const sheets = [];
-        const sheet = new Map();
+        const sheet = [];
         persons.forEach((person) => 
-          sheet.set(person, {
+          sheet.push({
             positive: true,
             number: 0,
+            personName: person,
           })
         );
         that.setData({

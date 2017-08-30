@@ -8,3 +8,7 @@
 .name {
   width: 100px;
 }
+
+.swiper {
+  width: 320px;
+}
