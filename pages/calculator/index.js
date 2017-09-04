@@ -44,7 +44,8 @@ Page({
       });
     });
     this.setData({
-      sheet,    
+      sheet,
+      balance: 0,    
     });
   },
   deleteSheets: function(event) {

@@ -8,13 +8,13 @@
         wx:for-item="personName">
       <span class="name">{{personName}}</span>
       <span>
-        <label>正负</label>
+        <label>{{(sheet[idx].positive) ? '正': '负'}}</label>
         <switch data-person-name="{{personName}}" 
             checked="{{sheet[idx].positive}}"
             bindchange="sliderChange" />
       </span>  
       <input data-person-name="{{personName}}"
-          value="{{sheet[idx].number}}"
+          value="{{(sheet[idx].number === 0) ? '' : sheet[idx].number}}"
           class="num" 
           type="number" 
           bindinput="inputChange"
