@@ -35,3 +35,7 @@
   border-bottom-right-radius: 5px;
   border-bottom-width: 1px;
 }
+
+label {
+  margin-right: 10px;
+}

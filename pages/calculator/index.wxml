@@ -6,13 +6,16 @@
         wx:key="{{index}}"
         wx:for-item="personName">
       <span class="name">{{personName}}</span>
-      <switch data-person-name="{{personName}}" 
-          checked 
-          bindchange="sliderChange" />  
+      <span>
+        <label>正负</label>
+        <switch data-person-name="{{personName}}" 
+            checked 
+            bindchange="sliderChange" />
+      </span>  
       <input data-person-name="{{personName}}"
           class="num" 
           type="number" 
-          bindchange="inputChange"
+          bindinput="inputChange"
           maxlength="3" />
     </li>
     <li class="person-list-item">
