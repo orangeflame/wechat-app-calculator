@@ -3,16 +3,18 @@
   <ul class="person-list">
     <li class="person-list-item" 
         wx:for="{{persons}}" 
+        wx:for-index="idx"  
         wx:key="{{index}}"
         wx:for-item="personName">
       <span class="name">{{personName}}</span>
       <span>
         <label>正负</label>
         <switch data-person-name="{{personName}}" 
-            checked 
+            checked="{{sheet[idx].positive}}"
             bindchange="sliderChange" />
       </span>  
       <input data-person-name="{{personName}}"
+          value="{{sheet[idx].number}}"
           class="num" 
           type="number" 
           bindinput="inputChange"
@@ -27,6 +29,10 @@
     <button bindtap="saveSheets" 
         type="primary" >
       保存
+    </button>
+    <button bindtap="clearSheet" 
+        type="default">
+      清空当前
     </button>
     <button bindtap="overview" 
         type="default" >

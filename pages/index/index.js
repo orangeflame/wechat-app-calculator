@@ -35,7 +35,6 @@ Page({
     return this.data.person.length !== 0;
   },
   goToCalculator: function() {
-    console.log('goToCalculator');
     wx.setStorage({
       key: "persons",
       data: this.data.persons,

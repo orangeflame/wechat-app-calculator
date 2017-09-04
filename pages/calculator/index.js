@@ -6,7 +6,7 @@ Page({
   },
   saveSheets: function() {
     const sheets = [...this.data.sheets, this.data.sheet];
-    this.setData({ sheets })
+    this.setData({ sheets });
   },
   inputChange: function(event) {
     const number = event.detail.value;
@@ -32,6 +32,19 @@ Page({
     this.setData({
       sheet,
       balance,
+    });
+  },
+  clearSheet: function() {
+    const sheet = [];
+    this.data.persons.forEach((person) => {
+      sheet.push({
+        positive: true,
+        number: 0,
+        personName: person,
+      });
+    });
+    this.setData({
+      sheet,    
     });
   },
   deleteSheets: function(event) {
