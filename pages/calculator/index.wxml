@@ -32,7 +32,7 @@
     </button>
     <button bindtap="clearSheet" 
         type="default">
-      清空当前
+      清空
     </button>
     <button bindtap="overview" 
         type="default" >
